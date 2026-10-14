@@ -16,6 +16,9 @@ Future<void> main() async {
   } on FormatException catch (e) {
     print('JSON格式有误，请检查文件内容: ${e.message}');
     return;
+  } on TypeError {
+    print('字段类型不对，请检查id/title/category是否为文字、borrowCount是否为数字');
+    return;
   } catch (e) {
     print('数据解析失败: $e');
     return;
