@@ -15,7 +15,7 @@ class Book {
         id: j['id'] as String,
         title: j['title'] as String,
         category: j['category'] as String,
-        borrowCount: (j['borrowCount'] as num).toInt(),
+        borrowCount: (j['borrowCount'] as num?)?.toInt() ?? 0,
       );
 
   Map<String, dynamic> toJson() => {
